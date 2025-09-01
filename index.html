@@ -1,50 +1,153 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noor Ahmed | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>K S NOOR AHMED | Portfolio</title>
+  <style>
+    /* ===== General Styles ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { line-height: 1.6; background-color: #f4f7fa; color: #333; }
+
+    /* ===== Hero Section ===== */
+    header.hero {
+      /* Gradient Background */
+      background: linear-gradient(to right, #3498db, #2ecc71);
+      /* Optional Image Background:
+      background: url('background.jpg') no-repeat center center/cover; */
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    header.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    header.hero p { font-size: 1.3rem; margin-bottom: 25px; }
+    header.hero .btn {
+      background-color: #fff; color: #3498db;
+      padding: 12px 25px; border-radius: 30px;
+      text-decoration: none; font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    header.hero .btn:hover { background-color: #2980b9; color: #fff; }
+
+    /* ===== Sections ===== */
+    section { padding: 60px 20px; max-width: 900px; margin: auto; }
+    section h2 {
+      font-size: 2rem; color: #2c3e50;
+      text-align: center; margin-bottom: 30px;
+      position: relative;
+    }
+    section h2::after {
+      content: ''; display: block;
+      width: 60px; height: 3px;
+      background: #3498db; margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* About Section */
+    #about p { text-align: center; font-size: 1.1rem; color: #555; max-width: 700px; margin: auto; }
+
+    /* Skills Section */
+    #skills ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center; }
+    #skills li {
+      background: #3498db; color: #fff;
+      padding: 12px; border-radius: 12px;
+      font-weight: bold; transition: all 0.3s ease;
+    }
+    #skills li:hover { transform: translateY(-5px); background: #2ecc71; }
+
+    /* Projects Section */
+    .project {
+      background: #fff; margin-bottom: 25px;
+      padding: 25px; border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project:hover { transform: translateY(-5px); }
+    .project h3 { color: #2c3e50; margin-bottom: 10px; }
+    .project p { margin-bottom: 10px; }
+    .project a { color: #3498db; text-decoration: none; font-weight: bold; margin-right: 15px; }
+    .project a:hover { color: #2ecc71; }
+
+    /* Contact Section */
+    #contact p { text-align: center; margin-bottom: 10px; font-size: 1.1rem; }
+    #contact a { color: #3498db; text-decoration: none; }
+    #contact a:hover { color: #2ecc71; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #2c3e50; color: #fff; }
+  </style>
 </head>
 <body>
+
   <!-- Hero Section -->
   <header class="hero">
-    <h1>Hi, I'm Noor Ahmed</h1>
-    <p>Aspiring Software Developer</p>
+    <img src="profile.jpg" alt="K S NOOR AHMED" class="profile-pic">
+    <h1>Hi, I'm K S NOOR AHMED</h1>
+    <p>Aspiring Data Scientist, ML Engineer, and Data Analyst</p>
     <a href="#projects" class="btn">View My Work</a>
-  </header>  <!-- About Section -->  <section id="about">
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m an aspiring software developer with a strong foundation in programming
-      and a passion for building projects that solve real-world problems. I enjoy
-      learning new technologies and continuously improving my skills.
+      I am an aspiring data scientist, machine learning engineer, and data analyst 
+      with a strong foundation in programming, statistics, and data visualization. 
+      My goal is to leverage data-driven insights to solve real-world problems and 
+      help businesses make smarter decisions.
     </p>
-  </section>  <!-- Skills Section -->  <section id="skills">
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>JavaScript</li>
-      <li>React.js</li>
-      <li>HTML & CSS</li>
-      <li>Git & GitHub</li>
+      <li>Python</li>
+      <li>R</li>
+      <li>Tableau</li>
+      <li>Power BI</li>
+      <li>MS Office</li>
+      <li>C</li>
+      <li>Statistics</li>
     </ul>
-  </section>  <!-- Projects Section -->  <section id="projects">
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
     <h2>Projects</h2>
     <div class="project">
-      <h3>Project 1</h3>
-      <p>A short description of your project. What problem does it solve?</p>
+      <h3>Project 1: Data Analysis Dashboard</h3>
+      <p>A Tableau/Power BI dashboard analyzing sales trends and customer behavior.</p>
       <a href="#">GitHub</a> | <a href="#">Live Demo</a>
     </div>
     <div class="project">
-      <h3>Project 2</h3>
-      <p>A short description of your project. What technologies did you use?</p>
+      <h3>Project 2: Machine Learning Model</h3>
+      <p>A predictive model built in Python to forecast outcomes using regression techniques.</p>
       <a href="#">GitHub</a> | <a href="#">Live Demo</a>
     </div>
-  </section>  <!-- Contact Section -->  <section id="contact">
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
     <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:nkurnipalli834@gmail.com">nkurnipalli834@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank">My Profile</a></p>
-    <p>GitHub: <a href="https://github.com/Noorahmedks-2103" target="_blank">My GitHub</a></p>
-  </section>  <footer>
-    <p>&copy; 2025 Noor Ahmed. All rights reserved.</p>
+    <p><strong>Phone:</strong> 7816080954</p>
+    <p><strong>Email:</strong> <a href="mailto:nkurnipalli34@gmail.com">nkurnipalli34@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 K S NOOR AHMED. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
