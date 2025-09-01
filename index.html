@@ -23,7 +23,6 @@
       overflow: hidden;
     }
 
-    /* Hero Content */
     .hero-content {
       position: relative;
       z-index: 2;
@@ -275,7 +274,7 @@
       particle.style.position = 'absolute';
       particle.style.bottom = '-20px';
       particle.style.borderRadius = '50%';
-      particle.style.animation = float ${5 + Math.random() * 10}s linear infinite;
+      particle.style.animation = `float ${5 + Math.random() * 10}s linear infinite`;
       hero.appendChild(particle);
     }
 
@@ -294,3 +293,5 @@
   </script>
 </body>
 </html>
+
+ 
