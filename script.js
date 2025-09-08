@@ -1,56 +1,17 @@
-// ===== Dark / Light Mode Toggle =====
-const toggleBtn=document.getElementById('darkModeToggle');
-toggleBtn.addEventListener('click',()=>{
-  document.body.classList.toggle('light-mode');
-  toggleBtn.textContent=document.body.classList.contains('light-mode')?'🌙':'☀';
-});
+---
 
-// ===== Typing Text Animation =====
-const typingText=document.getElementById('typing-text');
-const messages=["Aspiring Data Scientist","ML Engineer","Full Stack Developer","Data Analyst"];
-let msgIndex=0, charIndex=0;
-(function type(){
-  if(charIndex<messages[msgIndex].length){
-    typingText.textContent+=messages[msgIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type,150);
-  }else{
-    setTimeout(()=>{
-      typingText.textContent="";
-      charIndex=0;
-      msgIndex=(msgIndex+1)%messages.length;
-      type();
-    },1000);
-  }
-})();
+## *3️⃣ script.js*
 
-// ===== Floating Particles =====
-const hero=document.querySelector('.hero');
-for(let i=0;i<40;i++){
-  const particle=document.createElement('span');
-  particle.style.left=Math.random()*100+'%';
-  particle.style.width=particle.style.height=Math.random()*12+5+'px';
-  particle.style.background='rgba(255,255,255,'+Math.random()+')';
-  particle.style.position='absolute';
-  particle.style.bottom='-20px';
-  particle.style.borderRadius='50%';
-  particle.style.animation='float '+(5+Math.random()*10)+'s linear infinite';
-  hero.appendChild(particle);
-}
-const style=document.createElement('style');
-style.innerHTML=@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-900px);}};
-document.head.appendChild(style);
-
-// ===== Smooth Scroll =====
+```javascript
+// ===== Smooth Scroll for Nav =====
 document.querySelectorAll('.top-nav a').forEach(anchor=>{
   anchor.addEventListener('click',function(e){
     e.preventDefault();
-    const target=document.querySelector(this.getAttribute('href'));
-    if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
   });
 });
 
-// ===== Fade-In Sections on Scroll =====
+// ===== Fade-in Sections on Scroll =====
 const sections=document.querySelectorAll('section');
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -62,48 +23,41 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:0.1});
 sections.forEach(section=>observer.observe(section));
 
-// ===== Back to Top Button =====
-const backToTop=document.getElementById('backToTop');
-window.onscroll=function(){
-  if(document.body.scrollTop>300||document.documentElement.scrollTop>300){
-    backToTop.style.display="block";
-  }else{backToTop.style.display="none";}
-};
-backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-// ===== Active Section Highlight =====
-const navLinks=document.querySelectorAll('.top-nav a');
-const allSections=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{
-  let current='';
-  allSections.forEach(section=>{
-    const sectionTop=section.offsetTop-140;
-    if(pageYOffset>=sectionTop)current=section.getAttribute('id');
-  });
-  navLinks.forEach(link=>{link.classList.remove('active');if(link.getAttribute('href')=='#'+current)link.classList.add('active');});
+// ===== Counters =====
+const counters=document.querySelectorAll('.count');
+counters.forEach(counter=>{
+  const updateCount=()=>{
+    const target=+counter.getAttribute('data-target');
+    const count=+counter.innerText;
+    const inc=target/100;
+    if(count<target){
+      counter.innerText=Math.ceil(count+inc);
+      setTimeout(updateCount,20);
+    } else { counter.innerText=target; }
+  };
+  updateCount();
 });
 
-// ===== Animate Skill Bars with Percentages =====
-const skillBars=document.querySelectorAll('.skill-progress');
-skillBars.forEach(bar=>{
-  const percentSpan=document.createElement('span');
-  percentSpan.classList.add('percentage');
-  percentSpan.textContent='0%';
-  bar.parentElement.appendChild(percentSpan);
+// ===== Typing Text =====
+const typingText=document.getElementById('typing-text');
+const words=["Aspiring Data Scientist","ML Engineer","Full Stack Developer"];
+let i=0, j=0, currentWord="", isDeleting=false;
+function type(){
+  if(i>=words.length) i=0;
+  currentWord=words[i];
+  if(isDeleting){
+    typingText.innerText=currentWord.substring(0,j--);
+    if(j<0){ isDeleting=false; i++; setTimeout(type,200); return; }
+  } else {
+    typingText.innerText=currentWord.substring(0,j++);
+    if(j>currentWord.length){ isDeleting=true; setTimeout(type,1000); return; }
+  }
+  setTimeout(type,100);
+}
+type();
 
-  const animateSkill=()=>{
-    let width=0;
-    const target=parseInt(bar.getAttribute('data-progress'));
-    const interval=setInterval(()=>{
-      if(width>=target){clearInterval(interval);}
-      else{width++;bar.style.width=width+'%';percentSpan.textContent=width+'%';}
-    },15);
-  };
-
-  const skillBarObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){animateSkill();skillBarObserver.unobserve(entry.target);}
-    });
-  },{threshold:0.5});
-  skillBarObserver.observe(bar);
+// ===== Dark/Light Mode Toggle =====
+const toggle=document.getElementById('darkModeToggle');
+toggle.addEventListener('click',()=>{
+  document.body.classList.toggle('light-mode');
 });
