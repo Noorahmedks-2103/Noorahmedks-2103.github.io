@@ -9,112 +9,121 @@
 </head>
 <body>
 
-  <!-- Top Horizontal Sticky Navigation -->
+  <!-- Top Navigation -->
   <nav class="top-nav">
-    <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
-    <a href="#skills" class="nav-link"><i class="fas fa-lightbulb"></i> Skills</a>
-    <a href="#projects" class="nav-link"><i class="fas fa-folder-open"></i> Projects</a>
-    <a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a>
-    <a href="#accomplishments" class="nav-link"><i class="fas fa-trophy"></i> Accomplishments</a>
-    <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a>
+    <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#accomplishments"><i class="fas fa-trophy"></i> Accomplishments</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
   </nav>
 
-  <!-- Dark/Light Mode Toggle -->
-  <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+  <!-- Dark/Light Toggle -->
+  <button id="darkModeToggle">🌙</button>
 
   <!-- Hero Section -->
   <header class="hero">
+    <div class="particles"></div>
     <img src="images/profile.jpg" alt="Noor Ahmed" class="profile-pic">
     <h1 class="glow-text">Hi, I'm K S Noor Ahamad</h1>
     <p id="typing-text"></p>
+
+    <div class="hero-counters">
+      <div class="counter"><span class="count" data-target="12">0</span><p>Projects</p></div>
+      <div class="counter"><span class="count" data-target="7">0</span><p>Certifications</p></div>
+      <div class="counter"><span class="count" data-target="8">0</span><p>Skills</p></div>
+    </div>
+
     <a href="#projects" class="btn gradient-btn">View My Work</a>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="parallax">
-    <h2 class="glow-text">About Me</h2>
+  <section id="about">
+    <h2>About Me</h2>
     <p>
-      Passionate and results-driven Data Scientist / ML Engineer / Web Developer.
-      Skilled in AI, Python, Full Stack Development, and creating impactful insights.
+      Passionate Data Scientist / ML Engineer / Full Stack Developer.
+      Skilled in Python, AI, Web Development, and Analytics.
     </p>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2 class="glow-text">Skills</h2>
-    <div class="skill-bar"><span class="skill-name">Python</span><div class="skill-progress" data-progress="95%"></div></div>
-    <div class="skill-bar"><span class="skill-name">Machine Learning</span><div class="skill-progress" data-progress="90%"></div></div>
-    <div class="skill-bar"><span class="skill-name">SQL & MongoDB</span><div class="skill-progress" data-progress="85%"></div></div>
-    <div class="skill-bar"><span class="skill-name">Web / Full Stack Dev</span><div class="skill-progress" data-progress="80%"></div></div>
-    <div class="skill-bar"><span class="skill-name">Tableau & Power BI</span><div class="skill-progress" data-progress="85%"></div></div>
-    <div class="skill-bar"><span class="skill-name">Data Cleaning & Analysis</span><div class="skill-progress" data-progress="90%"></div></div>
+    <h2>Skills</h2>
+    <div class="cards-container">
+      <div class="card" data-desc="Proficient in Python for data analysis, ML & AI.">
+        <i class="fab fa-python"></i>
+        <span>Python</span>
+        <p class="desc"></p>
+      </div>
+      <div class="card" data-desc="Machine Learning & Neural Networks for predictive modeling.">
+        <i class="fas fa-brain"></i>
+        <span>Machine Learning</span>
+        <p class="desc"></p>
+      </div>
+      <div class="card" data-desc="Strong knowledge in SQL & MongoDB databases.">
+        <i class="fas fa-database"></i>
+        <span>SQL & MongoDB</span>
+        <p class="desc"></p>
+      </div>
+      <div class="card" data-desc="Full Stack Web Development using modern technologies.">
+        <i class="fas fa-code"></i>
+        <span>Web / Full Stack</span>
+        <p class="desc"></p>
+      </div>
+      <div class="card" data-desc="Data visualization with Tableau & Power BI.">
+        <i class="fas fa-chart-line"></i>
+        <span>Tableau & Power BI</span>
+        <p class="desc"></p>
+      </div>
+    </div>
   </section>
 
   <!-- Certifications Section -->
   <section id="certifications">
-    <h2 class="glow-text">Certifications</h2>
-    <ul>
-      <li>AI Engineer Certificate - United Latino Association</li>
-      <li>Deploying & Evaluating Gen AI Apps - MongoDB</li>
-      <li>Data Science Internship - Agrathas Academy</li>
-      <li>Power BI Workshop - United Latino Association</li>
-      <li>MS Excel Certification - United Latino Association</li>
-      <li>MongoDB Certification - MongoDB</li>
-      <li>Data Analytics with Tableau - APSCHE</li>
-    </ul>
+    <h2>Certifications</h2>
+    <div class="cards-container">
+      <div class="card" data-desc="AI Engineer Certificate - United Latino Association."><i class="fas fa-certificate"></i><span>AI Engineer - ULA</span><p class="desc"></p></div>
+      <div class="card" data-desc="Deploying & Evaluating Gen AI Apps - MongoDB."><i class="fas fa-certificate"></i><span>Gen AI Apps - MongoDB</span><p class="desc"></p></div>
+      <div class="card" data-desc="Data Science Internship Certification - Agrathas Academy."><i class="fas fa-certificate"></i><span>DS Internship - Agrathas</span><p class="desc"></p></div>
+      <div class="card" data-desc="Power BI Workshop - United Latino Association."><i class="fas fa-certificate"></i><span>Power BI - ULA</span><p class="desc"></p></div>
+    </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2 class="glow-text">Projects & Internships</h2>
-    <div class="project-card">
-      <h3>Data Science Internship - Agrathas Academy</h3>
-      <p>Worked on data pipelines, preprocessing, and predictive modeling.</p>
-    </div>
-    <div class="project-card">
-      <h3>Data Structures & Algorithms Internship - Six Phrase @ SVCE</h3>
-      <p>Strengthened problem-solving & algorithmic thinking through coding challenges.</p>
-    </div>
-    <div class="project-card">
-      <h3>Online Mart - E-commerce Platform</h3>
-      <p>Full-stack online shopping platform with product listing, cart, payment integration, and authentication.</p>
-      <a href="#" target="_blank">View Demo</a>
-      <a href="#" target="_blank">GitHub Repo</a>
+    <h2>Projects</h2>
+    <div class="cards-container">
+      <div class="card" data-desc="Online Mart E-commerce project using modern web technologies."><i class="fas fa-laptop-code"></i><span>Online Mart</span><p class="desc"></p></div>
+      <div class="card" data-desc="Data Science Internship - preprocessing, modeling, analytics."><i class="fas fa-laptop-code"></i><span>DS Internship</span><p class="desc"></p></div>
+      <div class="card" data-desc="Data Structures & Advanced Algorithms Internship projects."><i class="fas fa-laptop-code"></i><span>DS & Algo Internship</span><p class="desc"></p></div>
     </div>
   </section>
 
   <!-- Accomplishments Section -->
   <section id="accomplishments">
-    <h2 class="glow-text">Accomplishments</h2>
-    <ul>
-      <li>Problem-solving & algorithmic thinking strengthened via coding tests</li>
-      <li>Active contributor in Coding, Robotics, and Innovation Clubs</li>
-      <li>Team Leader in Business & Entrepreneurship Program</li>
-    </ul>
+    <h2>Accomplishments</h2>
+    <div class="cards-container">
+      <div class="card" data-desc="Active contributor in Coding & Robotics Clubs."><i class="fas fa-trophy"></i><span>Coding Club</span><p class="desc"></p></div>
+      <div class="card" data-desc="Active contributor in Innovation & Robotics Clubs."><i class="fas fa-trophy"></i><span>Robotics Club</span><p class="desc"></p></div>
+      <div class="card" data-desc="Team Leader in Business & Entrepreneurship Program."><i class="fas fa-trophy"></i><span>Team Leader</span><p class="desc"></p></div>
+    </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2 class="glow-text">Contact</h2>
-    <div class="contact-links">
-      <a href="mailto:noorahamad2103@gmail.com"><i class="fas fa-envelope"></i> noorahamad2103@gmail.com</a>
-      <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/Noorahmedks-2103" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://www.instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <h2>Contact</h2>
+    <div class="cards-container">
+      <a href="mailto:noorahamad2103@gmail.com" class="card"><i class="fas fa-envelope"></i><span>Email</span></a>
+      <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank" class="card"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+      <a href="https://github.com/Noorahmedks-2103" target="_blank" class="card"><i class="fab fa-github"></i><span>GitHub</span></a>
+      <a href="https://www.instagram.com/noorahmedks_" target="_blank" class="card"><i class="fab fa-instagram"></i><span>Instagram</span></a>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 K S Noor Ahamad. All rights reserved.</p>
   </footer>
-
-  <!-- Floating Buttons -->
-  <div class="floating-buttons">
-    <a href="mailto:noorahamad2103@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://wa.me/917816080954" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i></a>
-    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
-  </div>
 
   <script src="script.js"></script>
 </body>
