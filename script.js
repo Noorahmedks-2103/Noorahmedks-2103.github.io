@@ -1,63 +1,48 @@
----
-
-## *3️⃣ script.js*
-
-```javascript
-// ===== Smooth Scroll for Nav =====
-document.querySelectorAll('.top-nav a').forEach(anchor=>{
-  anchor.addEventListener('click',function(e){
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    document.querySelector(this.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// ===== Fade-in Sections on Scroll =====
-const sections=document.querySelectorAll('section');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.opacity=1;
-      entry.target.style.transform='translateY(0)';
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener("scroll", () => {
+  if (document.documentElement.scrollTop > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Dark / Light Theme Toggle
+const toggleTheme = document.getElementById("toggleTheme");
+toggleTheme.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+
+// Active Section Highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
     }
   });
-},{threshold:0.1});
-sections.forEach(section=>observer.observe(section));
-
-// ===== Counters =====
-const counters=document.querySelectorAll('.count');
-counters.forEach(counter=>{
-  const updateCount=()=>{
-    const target=+counter.getAttribute('data-target');
-    const count=+counter.innerText;
-    const inc=target/100;
-    if(count<target){
-      counter.innerText=Math.ceil(count+inc);
-      setTimeout(updateCount,20);
-    } else { counter.innerText=target; }
-  };
-  updateCount();
-});
-
-// ===== Typing Text =====
-const typingText=document.getElementById('typing-text');
-const words=["Aspiring Data Scientist","ML Engineer","Full Stack Developer"];
-let i=0, j=0, currentWord="", isDeleting=false;
-function type(){
-  if(i>=words.length) i=0;
-  currentWord=words[i];
-  if(isDeleting){
-    typingText.innerText=currentWord.substring(0,j--);
-    if(j<0){ isDeleting=false; i++; setTimeout(type,200); return; }
-  } else {
-    typingText.innerText=currentWord.substring(0,j++);
-    if(j>currentWord.length){ isDeleting=true; setTimeout(type,1000); return; }
-  }
-  setTimeout(type,100);
-}
-type();
-
-// ===== Dark/Light Mode Toggle =====
-const toggle=document.getElementById('darkModeToggle');
-toggle.addEventListener('click',()=>{
-  document.body.classList.toggle('light-mode');
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
 });
