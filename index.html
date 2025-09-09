@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noor Ahamad | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1 class="logo">Noor Ahamad</h1>
-      <ul>
-        <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-        <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
-        <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-      </ul>
-      <div class="social-icons">
-        <a href="https://instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:noorahamad2103@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/91781680954" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <button id="theme-toggle"><i class="fas fa-adjust"></i></button>
-      </div>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Noor Ahamad</div>
+    <ul>
+      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a></li>
+      <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+      <li><a href="#projects"><i class="fas fa-folder"></i> Projects</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </div>
+  </nav>
 
-  <!-- Landing Section -->
-  <section id="home" class="hero">
+  <!-- Hero -->
+  <header id="hero">
     <div class="hero-content">
       <img src="images/profile.jpg" alt="Profile" class="profile-pic">
-      <h2>Hello, I'm <span>Noor Ahamad</span></h2>
-      <p>Web & Full Stack Developer | Data Analytics Enthusiast</p>
+      <h1>Hi, I'm <span>Noor Ahamad</span></h1>
+      <h2><span id="typing"></span></h2>
+      <div class="social-icons">
+        <a href="https://wa.me/91781680954" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:noorahamad2103@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
-  </section>
+  </header>
 
   <!-- About -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>I am Noor Ahamad, a passionate developer with skills in web development, full-stack, and data analytics. Always eager to learn and take on challenging projects.</p>
+    <h2>👤 About Me</h2>
+    <p>
+      I'm Noor Ahamad, a passionate Web / Full Stack Developer with skills in HTML, CSS, JavaScript, and modern frameworks.  
+      I love building interactive, user-friendly applications and solving real-world problems through technology.
+    </p>
   </section>
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="card-container">
-      <div class="card">HTML, CSS, JavaScript</div>
-      <div class="card">React, Node.js</div>
-      <div class="card">Python, Data Analytics</div>
-      <div class="card">SQL, MongoDB</div>
+    <h2>💡 Skills</h2>
+    <div class="cards">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">Python</div>
+      <div class="card">Data Analytics</div>
       <div class="card">Full Stack Development</div>
     </div>
   </section>
 
   <!-- Certifications -->
   <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="card-container">
-      <div class="card">Certification 1</div>
-      <div class="card">Certification 2</div>
-      <div class="card">Certification 3</div>
+    <h2>🏅 Certifications</h2>
+    <div class="cards">
+      <div class="card">Python for Data Science</div>
+      <div class="card">Web Development Bootcamp</div>
+      <div class="card">Data Analytics Internship</div>
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="card-container">
-      <div class="card">E-commerce Online Mart</div>
-      <div class="card">Portfolio Website</div>
-      <div class="card">Data Analytics Internship Project</div>
+    <h2>📂 Projects</h2>
+    <div class="cards">
+      <div class="card">Online Mart (E-Commerce Website)</div>
+      <div class="card">Data Analytics Dashboard</div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>✉️ Contact</h2>
     <p>Email: <a href="mailto:noorahamad2103@gmail.com">noorahamad2103@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/noorahmedks_" target="_blank">@noorahmedks_</a></p>
-    <p>WhatsApp: <a href="https://wa.me/91781680954" target="_blank">Chat with me</a></p>
+    <p>WhatsApp: <a href="https://wa.me/91781680954">+91 781680954</a></p>
   </section>
+
+  <footer>
+    <p>© 2025 Noor Ahamad. All Rights Reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
