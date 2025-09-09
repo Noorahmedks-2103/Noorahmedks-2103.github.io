@@ -3,113 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K S Noor Ahamad | Portfolio</title>
+  <title>Noor Ahamad | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/2c6a4a4a7f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-      <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
-      <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li><button id="toggleTheme"><i class="fas fa-adjust"></i></button></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <img src="images/profile.jpg" alt="Noor Ahmed" class="profile-pic">
-    <h1>Hi, I'm <span>K S Noor Ahamad</span></h1>
-    <p>Aspiring Data Scientist | ML Engineer | Data Analyst</p>
-    <a href="#projects" class="btn">View My Work</a>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1 class="logo">Noor Ahamad</h1>
+      <ul>
+        <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+        <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:noorahamad2103@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/91781680954" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <button id="theme-toggle"><i class="fas fa-adjust"></i></button>
+      </div>
+    </nav>
   </header>
 
-  <!-- About Section -->
+  <!-- Landing Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <img src="images/profile.jpg" alt="Profile" class="profile-pic">
+      <h2>Hello, I'm <span>Noor Ahamad</span></h2>
+      <p>Web & Full Stack Developer | Data Analytics Enthusiast</p>
+    </div>
+  </section>
+
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      Passionate and results-driven Data Scientist / Machine Learning Engineer 
-      with hands-on experience in Python, AI, and data analytics. Skilled in 
-      preprocessing, predictive modeling, and creating impactful insights 
-      through visualization and storytelling.
-    </p>
+    <p>I am Noor Ahamad, a passionate developer with skills in web development, full-stack, and data analytics. Always eager to learn and take on challenging projects.</p>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="cards">
-      <div class="card">Python (Pandas, NumPy, Scikit-learn, Matplotlib)</div>
-      <div class="card">Machine Learning & Neural Networks</div>
-      <div class="card">SQL & MongoDB</div>
-      <div class="card">Tableau & Power BI</div>
-      <div class="card">MS Excel</div>
-      <div class="card">Data Cleaning & Statistical Analysis</div>
-      <div class="card">Web / Full Stack Development</div>
+    <div class="card-container">
+      <div class="card">HTML, CSS, JavaScript</div>
+      <div class="card">React, Node.js</div>
+      <div class="card">Python, Data Analytics</div>
+      <div class="card">SQL, MongoDB</div>
+      <div class="card">Full Stack Development</div>
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Certifications -->
   <section id="certifications">
     <h2>Certifications</h2>
-    <ul>
-      <li>AI Engineer Certificate - United Latino Association</li>
-      <li>Deploying & Evaluating Gen AI Apps - MongoDB</li>
-      <li>Data Science Internship Certification - Agrathas Academy</li>
-      <li>Power BI Workshop - United Latino Association</li>
-      <li>MS Excel Certification - United Latino Association</li>
-      <li>MongoDB Certification - MongoDB</li>
-      <li>Data Analytics with Tableau - APSCHE</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects & Internships</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Data Science Internship - Agrathas Academy</h3>
-        <p>Worked on data science pipelines, preprocessing, and model building.</p>
-      </div>
-      <div class="card">
-        <h3>Data Structures & Advanced Algorithms Internship - Six Phrase @ SVCE</h3>
-        <p>Strengthened problem-solving & algorithmic thinking through projects.</p>
-      </div>
-      <div class="card">
-        <h3>Data Analytics with Tableau - APSCHE</h3>
-        <p>Designed dashboards and performed analytics on datasets.</p>
-      </div>
-      <div class="card">
-        <h3>Webinar on Data Analytics with Gen AI - WsCube Tech</h3>
-        <p>Explored AI-powered analytics and data visualization techniques.</p>
-      </div>
-      <div class="card">
-        <h3>Web Development Project - Online Mart</h3>
-        <p>Developed an e-commerce web application with product catalog, cart, and payment flow.</p>
-      </div>
+    <div class="card-container">
+      <div class="card">Certification 1</div>
+      <div class="card">Certification 2</div>
+      <div class="card">Certification 3</div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>📞 Phone: 7816080954</p>
-    <p>📧 Email: <a href="mailto:noorahamad2103@gmail.com">noorahamad2103@gmail.com</a></p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank">My Profile</a></p>
-    <p>💻 GitHub: <a href="https://github.com/Noorahmedks-2103" target="_blank">My GitHub</a></p>
-    <p>📷 Instagram: <a href="https://instagram.com/noorahmedks_" target="_blank">@noorahmedks_</a></p>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-container">
+      <div class="card">E-commerce Online Mart</div>
+      <div class="card">Portfolio Website</div>
+      <div class="card">Data Analytics Internship Project</div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 K S Noor Ahamad. All rights reserved.</p>
-  </footer>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:noorahamad2103@gmail.com">noorahamad2103@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/noorahmedks_" target="_blank">@noorahmedks_</a></p>
+    <p>WhatsApp: <a href="https://wa.me/91781680954" target="_blank">Chat with me</a></p>
+  </section>
 
-  <button id="backToTop" title="Go to top">&#8679;</button>
   <script src="script.js"></script>
 </body>
 </html>
