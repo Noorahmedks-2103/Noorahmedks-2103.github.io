@@ -18,30 +18,50 @@ body.light-mode .top-nav a{color:#111;}
 body.light-mode #darkModeToggle{background:#111;color:#fff;}
 
 /* Hero */
-header.hero{position:relative;text-align:center;padding:120px 20px;overflow:hidden;background:#1e90ff;}
-.profile-wrapper{display:inline-block;border-radius:50%;padding:6px;background:#00ffff;}
-.profile-pic{width:180px;height:180px;border-radius:50%;border:4px solid #fff;object-fit:cover;}
+header.hero{position:relative;text-align:center;padding:120px 20px;overflow:hidden;background:#00c6ff;}
+.profile-wrapper{display:inline-block;position:relative;}
+.profile-pic{width:180px;height:180px;border-radius:50%;object-fit:cover;display:block;border:4px solid #fff;transition:0.3s;z-index:2;position:relative;}
+.profile-wrapper:hover .profile-pic{transform:scale(1.05);}
 
-/* Gradient Button */
-.gradient-btn{background:linear-gradient(90deg,#00c6ff,#0072ff);padding:12px 28px;border-radius:30px;color:#fff;font-weight:bold;}
-.gradient-btn:hover{background:linear-gradient(90deg,#0072ff,#00c6ff);}
+/* Sparkle animation */
+.sparkle-container{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+.sparkle-container::before,.sparkle-container::after{content:"";position:absolute;width:6px;height:6px;background:radial-gradient(circle,#fff,#00ffff);border-radius:50%;animation:spin 2s linear infinite;opacity:0.8;}
+.sparkle-container::before{top:10%;left:20%;}
+.sparkle-container::after{top:70%;left:75%;}
+@keyframes spin{0%{transform:rotate(0deg) translateX(0px);}50%{transform:rotate(180deg) translateX(5px);}100%{transform:rotate(360deg) translateX(0px);}}
+
+/* Hero text */
+.hero h1{font-size:3rem;margin-bottom:15px;}
+.hero p{font-size:1.3rem;margin-bottom:30px;}
+.gradient-btn{background:#0072ff;padding:12px 28px;border-radius:30px;color:#fff;font-weight:bold;}
+.gradient-btn:hover{background:#005bb5;}
 
 /* Sections */
-.section-bg{padding:60px 20px;max-width:900px;margin:auto;margin-bottom:40px;background:rgba(255,255,255,0.05);border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.3);opacity:0;transform:translateY(20px);transition:all 1s ease;}
+section{padding:60px 20px;max-width:900px;margin:auto;opacity:0;transform:translateY(20px);transition:all 1s ease;}
 section h2{text-align:center;font-size:2rem;margin-bottom:30px;}
+section h2::after{content:'';display:block;width:60px;height:3px;background:#00ffff;margin:10px auto;border-radius:2px;}
+body.light-mode section h2::after{background:#3498db;}
 section p{text-align:center;font-size:1.1rem;color:#ccc;}
 body.light-mode section p{color:#555;}
 
+/* Section backgrounds */
+.section-effect{background:rgba(0,0,0,0.2);padding:40px 20px;margin-bottom:40px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:all 0.5s ease;}
+
 /* Skills */
-.skill-bar{position:relative;margin:20px 0;background:#222;border-radius:30px;overflow:hidden;height:35px;}
+.skill-bar{position:relative;margin:20px 0;background:#222;border-radius:30px;overflow:hidden;height:35px;cursor:pointer;}
 .skill-progress{height:100%;width:0%;background:#00ffff;border-radius:30px;}
 .skill-bar span.skill-name{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-weight:bold;}
 .skill-bar span.percentage{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-weight:bold;color:#fff;}
 
 /* Project Cards */
-.project-card{background:#111;margin:20px 0;padding:20px;border-radius:15px;box-shadow:0 6px 15px rgba(0,0,0,0.2);transition:0.3s;}
+.project-card{background:#111;margin:20px 0;padding:20px;border-radius:15px;box-shadow:0 6px 15px rgba(0,0,0,0.2);transition:0.3s;cursor:pointer;}
 .project-card:hover{box-shadow:0 0 30px #00ffff,0 0 60px #00ffff;transform:translateY(-10px) scale(1.02);}
 body.light-mode .project-card{background:#fff;}
+
+/* Certifications & Accomplishments */
+#certifications li,#accomplishments li{margin:10px 0;padding:12px;background:#111;border-radius:10px;cursor:pointer;}
+#certifications li:hover,#accomplishments li:hover{background:#00ffff;color:#000;}
+body.light-mode #certifications li,body.light-mode #accomplishments li{background:#eee;}
 
 /* Contact */
 .contact-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:20px;}
