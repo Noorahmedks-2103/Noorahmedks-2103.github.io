@@ -24,6 +24,14 @@ let msgIndex = 0, charIndex = 0;
   }
 })();
 
+// ===== Typing Text Color Animation =====
+let colorIndex = 0;
+const colors = ['#00ffff','#6efff7','#ff6ec7','#ffd93d'];
+setInterval(() => {
+  typingText.style.color = colors[colorIndex % colors.length];
+  colorIndex++;
+}, 1000);
+
 // ===== Smooth Scroll =====
 document.querySelectorAll('.top-nav a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -93,3 +101,54 @@ skillBars.forEach(bar => {
   }, { threshold: 0.5 });
   skillBarObserver.observe(bar);
 });
+
+// ===== Floating Animation for Project Cards =====
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+  const floatAnim = () => {
+    let pos = 0, dir = 1;
+    setInterval(() => {
+      pos += dir * 0.3;
+      if (pos > 5 || pos < -5) dir *= -1;
+      card.style.transform = `translateY(${pos}px)`;
+    }, 30);
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        floatAnim();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  observer.observe(card);
+});
+
+// ===== Smooth Fade for Floating Buttons =====
+const floatingButtons = document.querySelector('.floating-buttons');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    floatingButtons.style.opacity = 1;
+    floatingButtons.style.transition = 'opacity 0.5s ease';
+  } else {
+    floatingButtons.style.opacity = 0;
+    floatingButtons.style.transition = 'opacity 0.5s ease';
+  }
+});
+
+// ===== Scroll-Triggered Glow for Section Headings =====
+const sectionHeadings = document.querySelectorAll('section h2');
+
+const headingGlowObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.textShadow = '0 0 15px rgba(255,110,199,0.8), 0 0 25px rgba(255,217,61,0.6), 0 0 35px rgba(110,255,247,0.5)';
+      entry.target.style.transition = 'text-shadow 1s ease-in-out';
+    } else {
+      entry.target.style.textShadow = '0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(0,255,255,0.2)';
+    }
+  });
+}, { threshold: 0.3 });
+
+sectionHeadings.forEach(heading => headingGlowObserver.observe(heading));
