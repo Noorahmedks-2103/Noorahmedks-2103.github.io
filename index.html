@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noor Ahmed Portfolio</title>
+  <title>Noor Ahmed - Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Top Horizontal Sticky Navigation -->
+  <!-- Top Navigation -->
   <nav class="top-nav">
-    <a href="#about"><i class="fas fa-user"></i> About</a>
-    <a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a>
-    <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
-    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
-    <a href="#accomplishments"><i class="fas fa-trophy"></i> Accomplishments</a>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
+    <a href="#skills" class="nav-link"><i class="fas fa-lightbulb"></i> Skills</a>
+    <a href="#projects" class="nav-link"><i class="fas fa-folder-open"></i> Projects</a>
+    <a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#accomplishments" class="nav-link"><i class="fas fa-trophy"></i> Accomplishments</a>
+    <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
   </nav>
 
-  <!-- Dark/Light Mode Toggle -->
+  <!-- Dark/Light Toggle -->
   <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header class="hero">
     <div class="profile-wrapper">
-      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-      <div class="sparkle"></div>
-      <div class="sparkle"></div>
-      <div class="sparkle"></div>
+      <img src="profile.jpg" 
+           alt="Profile Picture" 
+           class="profile-pic"
+           onerror="this.src='https://via.placeholder.com/180';">
     </div>
     <h1>Hi, I'm Noor Ahmed</h1>
     <p id="typing-text"></p>
     <a href="#projects" class="btn gradient-btn">View My Work</a>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="section-bg">
+  <!-- About -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>Passionate and results-driven Data Scientist / ML Engineer / Web Developer. Skilled in AI, Python, Full Stack Development, and creating impactful insights.</p>
+    <p>
+      Passionate and results-driven Data Scientist / ML Engineer / Web Developer.
+      Skilled in AI, Python, Full Stack Development, and creating impactful insights.
+    </p>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section-bg">
+  <!-- Skills -->
+  <section id="skills">
     <h2>Skills</h2>
     <div class="skill-bar"><span class="skill-name">Python</span><div class="skill-progress" data-progress="95"></div></div>
     <div class="skill-bar"><span class="skill-name">Machine Learning</span><div class="skill-progress" data-progress="90"></div></div>
@@ -52,8 +55,8 @@
     <div class="skill-bar"><span class="skill-name">Data Cleaning & Analysis</span><div class="skill-progress" data-progress="90"></div></div>
   </section>
 
-  <!-- Certifications Section -->
-  <section id="certifications" class="section-bg">
+  <!-- Certifications -->
+  <section id="certifications">
     <h2>Certifications</h2>
     <ul>
       <li>AI Engineer Certificate - United Latino Association</li>
@@ -66,8 +69,8 @@
     </ul>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section-bg">
+  <!-- Projects -->
+  <section id="projects">
     <h2>Projects & Internships</h2>
     <div class="project-card">
       <h3>Data Science Internship - Agrathas Academy</h3>
@@ -85,8 +88,8 @@
     </div>
   </section>
 
-  <!-- Accomplishments Section -->
-  <section id="accomplishments" class="section-bg">
+  <!-- Accomplishments -->
+  <section id="accomplishments">
     <h2>Accomplishments</h2>
     <ul>
       <li>Problem-solving & algorithmic thinking strengthened via coding tests</li>
@@ -95,18 +98,20 @@
     </ul>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section-bg">
+  <!-- Contact -->
+  <section id="contact">
     <h2>Contact</h2>
     <div class="contact-links">
-      <a href="mailto:nkurnipalli34@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/917816080954" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:nkurnipalli34@gmail.com"><i class="fas fa-envelope"></i> nkurnipalli34@gmail.com</a>
+      <a href="mailto:noorahamad2103@gmail.com"><i class="fas fa-envelope"></i> noorahamad2103@gmail.com</a>
+      <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/Noorahmedks-2103" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Noor Ahmed. All rights reserved.</p>
+    <p>&copy; 2025 Noor. All rights reserved.</p>
   </footer>
 
   <!-- Floating Buttons -->
