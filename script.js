@@ -1,49 +1,50 @@
-// ===== Dark / Light Mode Toggle =====
-const toggleBtn = document.getElementById('darkModeToggle');
-toggleBtn.addEventListener('click',()=>{
+// Dark/Light Mode
+const toggle = document.getElementById('darkModeToggle');
+toggle.addEventListener('click',()=>{
   document.body.classList.toggle('light-mode');
 });
 
-// ===== Typing Animation =====
-const typingText = document.getElementById('typing-text');
-const words = ["Data Scientist", "ML Engineer", "Full Stack Developer"];
-let i=0, j=0, currentWord='', isDeleting=false;
-function type(){
-  if(i>=words.length) i=0;
-  currentWord=words[i];
-  typingText.textContent=currentWord.substring(0,j);
-  if(!isDeleting) j++;
-  else j--;
-  if(j===currentWord.length+1 && !isDeleting){isDeleting=true;}
-  else if(j===0 && isDeleting){isDeleting=false;i++;}
-  setTimeout(type,isDeleting?50:150);
+// Typing Effect
+const text = "Data Scientist | ML Engineer | Web Developer";
+let index = 0;
+function typeText(){
+  const typingElement = document.getElementById('typing-text');
+  typingElement.innerText = text.slice(0,index);
+  index++;
+  if(index>text.length) index=0;
 }
-type();
+setInterval(typeText,150);
 
-// ===== Smooth Scroll & Fade-in =====
+// Smooth Scroll & Fade-in Sections
 const sections = document.querySelectorAll('section');
-function checkSections(){
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(section=>{
-    const top = section.getBoundingClientRect().top;
-    if(top<triggerBottom) section.style.opacity='1', section.style.transform='translateY(0)';
+const options = {threshold:0.2};
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
   });
-}
-window.addEventListener('scroll',checkSections);
-window.addEventListener('load',checkSections);
+},options);
+sections.forEach(section=>observer.observe(section));
 
-// ===== Skill Bar Animation =====
+// Skill Bars Animation
 const skillBars = document.querySelectorAll('.skill-progress');
-skillBars.forEach(bar=>{
-  let width=0;
-  const target = bar.dataset.progress;
-  const interval = setInterval(()=>{
-    if(width>=target) clearInterval(interval);
-    else {width++; bar.style.width=width+'%';}
-  },20);
+window.addEventListener('scroll',()=>{
+  skillBars.forEach(bar=>{
+    const value = bar.getAttribute('data-progress');
+    const barPos = bar.getBoundingClientRect().top;
+    const screenPos = window.innerHeight/1.2;
+    if(barPos < screenPos){
+      bar.style.width = value + '%';
+    }
+  });
 });
 
-// ===== Back To Top =====
+// Back to Top Button
 const backBtn = document.getElementById('backToTop');
 backBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-window.addEventListener('scroll',()=>{backBtn.style.display=(window.scrollY>300)?'block':'none';});
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>500) backBtn.style.display='block';
+  else backBtn.style.display='none';
+});
