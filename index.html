@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Top Navigation -->
+  <!-- Top Horizontal Sticky Navigation -->
   <nav class="top-nav">
     <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
     <a href="#skills" class="nav-link"><i class="fas fa-lightbulb"></i> Skills</a>
@@ -19,13 +19,14 @@
     <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
   </nav>
 
-  <!-- Dark/Light Toggle -->
+  <!-- Dark/Light Mode Toggle -->
   <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
 
   <!-- Hero Section -->
   <header class="hero">
     <div class="profile-wrapper">
-      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+      <div class="sparkle-container"></div>
     </div>
     <h1>Hi, I'm Noor Ahmed</h1>
     <p id="typing-text"></p>
@@ -33,48 +34,69 @@
   </header>
 
   <!-- About Section -->
-  <section id="about" class="section-bg">
+  <section id="about">
     <h2>About Me</h2>
-    <p>Passionate and results-driven Data Scientist / ML Engineer / Web Developer. Skilled in AI, Python, Full Stack Development, and creating impactful insights.</p>
+    <p>
+      Passionate and results-driven Data Scientist / ML Engineer / Web Developer.
+      Skilled in AI, Python, Full Stack Development, and creating impactful insights.
+    </p>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="section-bg">
+  <section id="skills" class="section-effect">
     <h2>Skills</h2>
-    <div class="skill-bar"><span class="skill-name">Python</span><div class="skill-progress" data-progress="95"></div></div>
-    <div class="skill-bar"><span class="skill-name">Machine Learning</span><div class="skill-progress" data-progress="90"></div></div>
-    <div class="skill-bar"><span class="skill-name">SQL & MongoDB</span><div class="skill-progress" data-progress="85"></div></div>
-    <div class="skill-bar"><span class="skill-name">Web / Full Stack Dev</span><div class="skill-progress" data-progress="80"></div></div>
-    <div class="skill-bar"><span class="skill-name">Tableau & Power BI</span><div class="skill-progress" data-progress="85"></div></div>
-    <div class="skill-bar"><span class="skill-name">Data Cleaning & Analysis</span><div class="skill-progress" data-progress="90"></div></div>
+    <div class="skill-bar" data-effect>
+      <span class="skill-name">Python</span>
+      <div class="skill-progress" data-progress="95"></div>
+    </div>
+    <div class="skill-bar" data-effect>
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-progress" data-progress="90"></div>
+    </div>
+    <div class="skill-bar" data-effect>
+      <span class="skill-name">SQL & MongoDB</span>
+      <div class="skill-progress" data-progress="85"></div>
+    </div>
+    <div class="skill-bar" data-effect>
+      <span class="skill-name">Web / Full Stack Dev</span>
+      <div class="skill-progress" data-progress="80"></div>
+    </div>
+    <div class="skill-bar" data-effect>
+      <span class="skill-name">Tableau & Power BI</span>
+      <div class="skill-progress" data-progress="85"></div>
+    </div>
+    <div class="skill-bar" data-effect>
+      <span class="skill-name">Data Cleaning & Analysis</span>
+      <div class="skill-progress" data-progress="90"></div>
+    </div>
   </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="section-bg">
+  <section id="certifications" class="section-effect">
     <h2>Certifications</h2>
     <ul>
-      <li>AI Engineer Certificate - United Latino Association</li>
-      <li>Deploying & Evaluating Gen AI Apps - MongoDB</li>
-      <li>Data Science Internship - Agrathas Academy</li>
-      <li>Power BI Workshop - United Latino Association</li>
-      <li>MS Excel Certification - United Latino Association</li>
-      <li>MongoDB Certification - MongoDB</li>
-      <li>Data Analytics with Tableau - APSCHE</li>
+      <li data-effect>AI Engineer Certificate - United Latino Association</li>
+      <li data-effect>Deploying & Evaluating Gen AI Apps - MongoDB</li>
+      <li data-effect>Data Science Internship - Agrathas Academy</li>
+      <li data-effect>Power BI Workshop - United Latino Association</li>
+      <li data-effect>MS Excel Certification - United Latino Association</li>
+      <li data-effect>MongoDB Certification - MongoDB</li>
+      <li data-effect>Data Analytics with Tableau - APSCHE</li>
     </ul>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="section-bg">
+  <section id="projects" class="section-effect">
     <h2>Projects & Internships</h2>
-    <div class="project-card">
+    <div class="project-card" data-effect>
       <h3>Data Science Internship - Agrathas Academy</h3>
       <p>Worked on data pipelines, preprocessing, and predictive modeling.</p>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-effect>
       <h3>Data Structures & Algorithms Internship - Six Phrase @ SVCE</h3>
       <p>Strengthened problem-solving & algorithmic thinking through coding challenges.</p>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-effect>
       <h3>Online Mart - E-commerce Platform</h3>
       <p>Full-stack online shopping platform with product listing, cart, payment integration, and authentication.</p>
       <a href="#" target="_blank">View Demo</a>
@@ -83,17 +105,17 @@
   </section>
 
   <!-- Accomplishments Section -->
-  <section id="accomplishments" class="section-bg">
+  <section id="accomplishments" class="section-effect">
     <h2>Accomplishments</h2>
     <ul>
-      <li>Problem-solving & algorithmic thinking strengthened via coding tests</li>
-      <li>Active contributor in Coding, Robotics, and Innovation Clubs</li>
-      <li>Team Leader in Business & Entrepreneurship Program</li>
+      <li data-effect>Problem-solving & algorithmic thinking strengthened via coding tests</li>
+      <li data-effect>Active contributor in Coding, Robotics, and Innovation Clubs</li>
+      <li data-effect>Team Leader in Business & Entrepreneurship Program</li>
     </ul>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-bg">
+  <section id="contact" class="section-effect">
     <h2>Contact</h2>
     <div class="contact-links">
       <a href="mailto:nkurnipalli34@gmail.com"><i class="fas fa-envelope"></i> nkurnipalli34@gmail.com</a>
