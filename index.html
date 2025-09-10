@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Top Horizontal Sticky Navigation -->
+  <!-- Top Navigation -->
   <nav class="top-nav">
     <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
     <a href="#skills" class="nav-link"><i class="fas fa-lightbulb"></i> Skills</a>
@@ -21,21 +21,24 @@
 
   <!-- Dark/Light Mode Toggle -->
   <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
-<!-- Hero Section -->
-<header class="hero">
-  <div class="profile-wrapper">
-    <img src="assets/images/profile.jpg" 
-         alt="Profile Picture" 
-         class="profile-pic"
-         onerror="this.src='assets/images/default.jpg';">
-  </div>
-  <h1>Hi, I'm Noor Ahmed</h1>
-  <p id="typing-text"></p>
-  <a href="#projects" class="btn gradient-btn">View My Work</a>
-</header>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="profile-wrapper">
+      <div class="sparkle-container">
+        <img src="assets/images/profile.jpg" 
+             alt="Profile Picture" 
+             class="profile-pic"
+             onerror="this.src='https://via.placeholder.com/180';">
+      </div>
+    </div>
+    <h1>Hi, I'm Noor Ahmed</h1>
+    <p id="typing-text"></p>
+    <a href="#projects" class="btn gradient-btn">View My Work</a>
+  </header>
 
   <!-- About Section -->
-  <section id="about" class="parallax">
+  <section id="about">
     <h2>About Me</h2>
     <p>
       Passionate and results-driven Data Scientist / ML Engineer / Web Developer.
@@ -46,30 +49,12 @@
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skill-bar">
-      <span class="skill-name">Python</span>
-      <div class="skill-progress" data-progress="95"></div>
-    </div>
-    <div class="skill-bar">
-      <span class="skill-name">Machine Learning</span>
-      <div class="skill-progress" data-progress="90"></div>
-    </div>
-    <div class="skill-bar">
-      <span class="skill-name">SQL & MongoDB</span>
-      <div class="skill-progress" data-progress="85"></div>
-    </div>
-    <div class="skill-bar">
-      <span class="skill-name">Web / Full Stack Dev</span>
-      <div class="skill-progress" data-progress="80"></div>
-    </div>
-    <div class="skill-bar">
-      <span class="skill-name">Tableau & Power BI</span>
-      <div class="skill-progress" data-progress="85"></div>
-    </div>
-    <div class="skill-bar">
-      <span class="skill-name">Data Cleaning & Analysis</span>
-      <div class="skill-progress" data-progress="90"></div>
-    </div>
+    <div class="skill-bar"><span class="skill-name">Python</span><div class="skill-progress" data-progress="95"></div></div>
+    <div class="skill-bar"><span class="skill-name">Machine Learning</span><div class="skill-progress" data-progress="90"></div></div>
+    <div class="skill-bar"><span class="skill-name">SQL & MongoDB</span><div class="skill-progress" data-progress="85"></div></div>
+    <div class="skill-bar"><span class="skill-name">Web / Full Stack Dev</span><div class="skill-progress" data-progress="80"></div></div>
+    <div class="skill-bar"><span class="skill-name">Tableau & Power BI</span><div class="skill-progress" data-progress="85"></div></div>
+    <div class="skill-bar"><span class="skill-name">Data Cleaning & Analysis</span><div class="skill-progress" data-progress="90"></div></div>
   </section>
 
   <!-- Certifications Section -->
@@ -143,4 +128,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
