@@ -1,11 +1,11 @@
-// Dark / Light Mode Toggle
+// ===== Dark / Light Mode Toggle =====
 const toggleBtn = document.getElementById('darkModeToggle');
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀';
 });
 
-// Typing Text Animation
+// ===== Typing Animation =====
 const typingText = document.getElementById('typing-text');
 const messages = ["Aspiring Data Scientist", "ML Engineer", "Full Stack Developer", "Data Analyst"];
 let msgIndex = 0, charIndex = 0;
@@ -24,7 +24,7 @@ let msgIndex = 0, charIndex = 0;
   }
 })();
 
-// Smooth Scroll
+// ===== Smooth Scroll =====
 document.querySelectorAll('.top-nav a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -33,49 +33,70 @@ document.querySelectorAll('.top-nav a').forEach(anchor => {
   });
 });
 
-// Fade-In Sections on Scroll
+// ===== Fade-In Sections =====
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.style.opacity = 1;
       entry.target.style.transform = 'translateY(0)';
     }
   });
-}, { threshold: 0.1 });
+},{threshold:0.1});
 sections.forEach(section => observer.observe(section));
 
-// Back to Top
+// ===== Back to Top =====
 const backToTop = document.getElementById('backToTop');
-window.onscroll = function () {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    backToTop.style.display = "block";
-  } else { backToTop.style.display = "none"; }
+window.onscroll = function() {
+  if(document.body.scrollTop>300 || document.documentElement.scrollTop>300){
+    backToTop.style.display="block";
+  }else{ backToTop.style.display="none"; }
 };
-backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+backToTop.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-// Active Section Highlight
+// ===== Active Section Highlight =====
 const navLinks = document.querySelectorAll('.top-nav a');
-const allSections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll',()=>{
   let current = '';
-  allSections.forEach(section => {
+  sections.forEach(section=>{
     const sectionTop = section.offsetTop - 140;
-    if (pageYOffset >= sectionTop) current = section.getAttribute('id');
+    if(pageYOffset >= sectionTop) current = section.getAttribute('id');
   });
-  navLinks.forEach(link => {
+  navLinks.forEach(link=>{
     link.classList.remove('active');
-    if (link.getAttribute('href') == '#' + current) link.classList.add('active');
+    if(link.getAttribute('href') === '#'+current) link.classList.add('active');
   });
 });
 
-// Animate Skill Bars
+// ===== Animate Skill Bars =====
 const skillBars = document.querySelectorAll('.skill-progress');
-skillBars.forEach(bar => {
+skillBars.forEach(bar=>{
   const percentSpan = document.createElement('span');
   percentSpan.classList.add('percentage');
   percentSpan.textContent = '0%';
   bar.parentElement.appendChild(percentSpan);
 
-  const animateSkill = () => {
-    let width =
+  const animateSkill = ()=>{
+    let width = 0;
+    const target = parseInt(bar.getAttribute('data-progress'));
+    const interval = setInterval(()=>{
+      if(width>=target){ clearInterval(interval); }
+      else { width++; bar.style.width=width+'%'; percentSpan.textContent=width+'%'; }
+    },15);
+  };
+
+  const skillObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ animateSkill(); skillObserver.unobserve(entry.target); }
+    });
+  },{threshold:0.5});
+  skillObserver.observe(bar);
+});
+
+// ===== Certifications & Accomplishments Click Effect =====
+document.querySelectorAll('#certifications ul li, #accomplishments ul li').forEach(item=>{
+  item.addEventListener('click', ()=>{
+    item.classList.toggle('clicked');
+    item.style.transform = item.classList.contains('clicked') ? 'translateX(15px)' : 'translateX(0)';
+  });
+});
