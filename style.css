@@ -1,173 +1,262 @@
-/* ===== RESET ===== */
+/* ===================== RESET ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #000428, #004e92);
+  background: linear-gradient(135deg, #0a0f24, #111829);
   color: #fff;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
-/* ===== TOP NAV ===== */
+/* ===================== NAVIGATION ===================== */
 .top-nav {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 18px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  position: sticky;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 999;
 }
-.top-nav .nav-link {
-  color: #00eaff;
-  font-weight: 600;
+
+.top-nav .logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+.top-nav .logo span {
+  color: #33e1ff;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  font-size: 15px;
   text-decoration: none;
+  color: #fff;
   transition: 0.3s;
 }
-.top-nav .nav-link:hover {
-  scale: 1.1;
-  color: #fff;
+.nav-links a:hover {
+  color: #33e1ff;
 }
 
-/* ===== DARK MODE BUTTON ===== */
-#darkModeToggle {
+.resume-btn {
+  background: #33e1ff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-left: 15px;
+  color: #000;
+  font-weight: bold;
+}
+.resume-btn:hover {
+  background: #00c9ff;
+}
+
+/* ===================== DARK MODE TOGGLE ===================== */
+.dark-toggle {
   position: fixed;
-  top: 15px;
-  right: 15px;
-  background: #00eaff;
-  border-radius: 50%;
+  right: 25px;
+  bottom: 25px;
+  background: #33e1ff;
+  color: #000;
+  font-size: 20px;
+  padding: 12px 14px;
   border: none;
-  font-size: 22px;
-  padding: 10px 13px;
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 10px #00eaff;
+  z-index: 999;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===================== HERO ===================== */
 .hero {
   text-align: center;
-  padding: 70px 20px;
+  padding-top: 130px;
+  padding-bottom: 80px;
 }
+
 .profile-wrapper {
   position: relative;
   display: inline-block;
 }
+
 .profile-pic {
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  border: 4px solid #00eaff;
-  box-shadow: 0 0 25px #00eaff;
+  border: 4px solid #33e1ff;
+  object-fit: cover;
+  animation: float 5s infinite ease-in-out;
 }
-.hero h1 {
-  margin-top: 12px;
-  font-size: 38px;
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-title {
+  font-size: 40px;
+  margin-top: 15px;
   font-weight: 700;
 }
-.hero .highlight {
-  color: #00eaff;
-}
-.subtitle {
-  font-size: 22px;
-  margin-top: 6px;
-  color: #d0f7ff;
+.hero-title span {
+  color: #33e1ff;
 }
 
-/* ===== VISITOR COUNTER ===== */
-.visitor-counter {
-  margin-top: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #00eaff;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(0, 234, 255, 0.1);
-  padding: 6px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 234, 255, 0.35);
-  box-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+#typing {
+  color: #00d9ff;
+  font-size: 20px;
+  margin-bottom: 18px;
+  min-height: 28px;
 }
 
-/* ===== BUTTON ===== */
-.btn {
+.primary-btn {
+  background: linear-gradient(135deg, #00eaff, #008cff);
+  padding: 12px 22px;
+  border-radius: 10px;
   display: inline-block;
-  margin-top: 25px;
-  padding: 12px 35px;
-  border-radius: 30px;
-  background: linear-gradient(45deg, #00eaff, #0066ff);
-  color: #000;
-  font-weight: 700;
+  margin-top: 15px;
+  color: #fff;
   text-decoration: none;
   transition: 0.3s;
 }
-.btn:hover {
-  scale: 1.1;
-  border: 2px solid #fff;
+.primary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00d9ff;
 }
 
-/* ===== SECTIONS ===== */
-.section-bg {
-  padding: 60px 20px;
+.visitor-box {
+  margin-top: 18px;
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.09);
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* ===================== SECTIONS ===================== */
+.section {
+  padding: 60px 10%;
   text-align: center;
 }
-.section-bg h2 {
+
+.section-title {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  color: #33e1ff;
 }
 
-/* ===== SKILL BARS ===== */
-.skill-bar {
-  width: 80%;
-  margin: 12px auto;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 6px;
-}
-.skill-progress {
-  height: 12px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #00eaff, #0066ff);
-  width: 0%;
-  transition: width 1.5s ease;
+.section-desc {
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.7;
 }
 
-/* ===== PROJECT CARDS ===== */
+/* ===================== SKILLS ===================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.skill-item {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.skill-item:hover {
+  background: #33e1ff;
+  color: #000;
+}
+
+/* ===================== PROJECTS ===================== */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
 .project-card {
   background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(0,234,255,0.3);
-  border-radius: 18px;
-  padding: 22px;
-  margin: 18px auto;
-  width: 80%;
-  box-shadow: 0 0 18px rgba(0,234,255,0.4);
+  border-radius: 15px;
+  padding-bottom: 20px;
+  overflow: hidden;
   transition: 0.3s;
 }
+.project-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
 .project-card:hover {
-  scale: 1.03;
-  background: rgba(0,234,255,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
 }
-
-/* ===== CONTACT ===== */
-.contact-links a {
-  display: block;
-  margin: 10px;
-  color: #00eaff;
-  font-size: 18px;
+.project-card h3 {
+  margin: 15px 0 5px;
+}
+.project-links a {
   text-decoration: none;
+  background-color: #33e1ff;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 6px;
+  display: inline-block;
+  font-weight: 600;
+}
+.project-links a:hover {
+  background-color: #00c4ff;
 }
 
-/* ===== FOOTER ===== */
+/* ===================== CONTACT ===================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.contact-grid a {
+  padding: 12px;
+  border: 1px solid #33e1ff;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact-grid a:hover {
+  background: #33e1ff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* ===================== LIST STYLE ===================== */
+.list {
+  text-align: left;
+  display: inline-block;
+  line-height: 2;
+}
+
+/* ===================== FOOTER ===================== */
 footer {
-  margin-top: 30px;
   text-align: center;
-  padding: 15px;
-  background: rgba(255,255,255,0.05);
+  padding: 18px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .nav-links a { margin: 7px; display: inline-block; }
 }
