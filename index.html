@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noor Ahmed - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
+  <a href="#skills" class="nav-link"><i class="fas fa-lightbulb"></i> Skills</a>
+  <a href="#projects" class="nav-link"><i class="fas fa-folder-open"></i> Projects</a>
+  <a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a>
+  <a href="#accomplishments" class="nav-link"><i class="fas fa-trophy"></i> Accomplishments</a>
+  <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
+<button id="darkModeToggle">🌙</button>
+
+<header class="hero">
+  <div class="profile-wrapper">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+  </div>
+  <h1>Hi, I'm <span class="highlight">Noor Ahmed</span></h1>
+  <p class="subtitle"><span id="typing-text" class="typing"></span></p>
+
+  <div id="visitor-counter" class="visitor-counter">
+    <i class="fas fa-eye"></i> Visitors: <span id="visitCount">Loading...</span>
+  </div>
+
+  <a href="#projects" class="btn gradient-btn">View My Work</a>
+</header>
+
+<section id="about" class="section-bg">
+  <h2>About Me</h2>
+  <p>Passionate and innovative Data Scientist / ML Engineer / Business Analyst / Python Developer with expertise in Artificial Intelligence, Data Analytics, and Automation.</p>
+</section>
+
+<section id="skills" class="section-bg">
+  <h2>Skills</h2>
+  <div class="skill-bar"><span>Python</span><div class="skill-progress" data-progress="95"></div></div>
+  <div class="skill-bar"><span>Machine Learning</span><div class="skill-progress" data-progress="90"></div></div>
+  <div class="skill-bar"><span>Data Analysis</span><div class="skill-progress" data-progress="88"></div></div>
+  <div class="skill-bar"><span>SQL & MongoDB</span><div class="skill-progress" data-progress="85"></div></div>
+  <div class="skill-bar"><span>Power BI & Tableau</span><div class="skill-progress" data-progress="85"></div></div>
+  <div class="skill-bar"><span>Automation & NLP</span><div class="skill-progress" data-progress="80"></div></div>
+</section>
+
+<section id="projects" class="section-bg">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>📈 Stock Price Forecasting Web App</h3>
+    <p>Predicts stock prices using ML model and real stock market data with interactive visualizations.</p>
+    <p><strong>Tech:</strong> Streamlit, yFinance, Scikit-Learn</p>
+    <a href="https://stock-forecasting-webapp-z5odae5cyymerm4e895pch.streamlit.app" target="_blank">Live Demo</a>
+    <a href="https://github.com/Noorahmedks-2103/Stock-Forecasting-WebApp" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>🎓 Student Performance Prediction</h3>
+    <p>Regression model predicting student academic performance based on study features.</p>
+    <a href="https://github.com/Noorahmedks-2103/Student-Performance-Prediction-ML" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>🏦 Loan Approval Prediction</h3>
+    <p>Classification model predicting loan approval using dataset of applicant features.</p>
+    <a href="https://github.com/Noorahmedks-2103/Loan-Approval-Prediction" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>📉 Customer Churn Prediction</h3>
+    <p>Predicts customers likely to leave services using ML classification model.</p>
+    <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>🤖 Student Query Chatbot (NLP)</h3>
+    <p>Python-based chatbot answering student queries using NLP processing.</p>
+    <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<section id="contact" class="section-bg">
+  <h2>Contact</h2>
+  <div class="contact-links">
+    <a href="mailto:nkurnipalli34@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <a href="https://wa.me/917816080954" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/Noorahmedks-2103" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Noor. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
