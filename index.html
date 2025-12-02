@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noor Ahmed - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- Top Navigation -->
-<nav class="top-nav glass-nav">
-  <div class="logo">Noor<span>Ahmed</span></div>
+<!-- Particle Background -->
+<canvas id="particles"></canvas>
+
+<!-- NAVBAR -->
+<nav class="top-nav">
+  <div class="logo">Noor <span>Ahmed</span></div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -19,152 +23,161 @@
     <a href="#certifications">Certifications</a>
     <a href="#accomplishments">Achievements</a>
     <a href="#contact">Contact</a>
-    <a href="assets/resume.pdf" class="resume-btn" download>Resume ⬇️</a>
+    <button id="resumeModalBtn" class="nav-resume-btn">
+      <i class="fa-solid fa-file-pdf"></i> Resume
+    </button>
   </div>
 </nav>
 
-<!-- Dark/Light Toggle -->
-<button id="darkModeToggle" title="Toggle Dark Mode" class="dark-toggle">🌙</button>
+<!-- DARK / LIGHT TOGGLE + RESUME BUTTON -->
+<button id="darkModeToggle" class="dark-toggle">🌙</button>
+<a class="floating-resume" href="assets/resume.pdf" target="_blank">
+  <i class="fa-solid fa-download"></i>
+</a>
 
-<!-- Hero Section -->
-<header class="hero">
-  <div class="profile-wrapper">
-    <img src="assets/profile.jpg" class="profile-pic" alt="Noor Profile" />
-    <div class="sparkles"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="profile-frame">
+    <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
   </div>
 
-  <h1 class="hero-title">Hi, I'm <span>Noor Ahmed</span></h1>
-  <p class="typing-text" id="typing"></p>
+  <h1>Hi, I'm <span class="accent">Noor Ahmed</span></h1>
+  <p id="typing" class="typing-text"></p>
 
-  <a href="#projects" class="btn primary-btn">View My Work</a>
+  <a href="#projects" class="btn primary-btn">🚀 View My Work</a>
 
-  <!-- Visitors Counter -->
   <div class="visitor-box">
-    <i class="fas fa-users"></i> Visitors: <span id="visitor-count">0000</span>
+    <i class="fa-solid fa-eye"></i>
+    Visitors: <span id="visitor-count">0000</span>
   </div>
-</header>
+</section>
 
-<!-- About Section -->
-<section id="about" class="section">
+<!-- ABOUT -->
+<section id="about" class="section glass-card">
   <h2 class="section-title">About Me</h2>
-  <p class="section-desc">
-    Passionate and results-driven <b>Machine Learning Engineer</b> and <b>Data Scientist</b> with hands-on experience in 
-    AI, Python, Analytics & Web Development. I build intelligent solutions and real-world data projects.
+  <p>
+    I am a passionate <b>Machine Learning Engineer</b>, <b>Data Scientist</b>, and <b>AI Developer</b> specializing
+    in predictive modeling, automation, and building real-world data-driven applications.
   </p>
 </section>
 
-<!-- Skills Section -->
-<section id="skills" class="section">
+<!-- SKILLS -->
+<section id="skills" class="section glass-card">
   <h2 class="section-title">Skills</h2>
   <div class="skills-grid">
     <div class="skill-item">Python</div>
     <div class="skill-item">Machine Learning</div>
-    <div class="skill-item">Data Analytics</div>
-    <div class="skill-item">Business Analytics</div>
+    <div class="skill-item">Data Analysis</div>
+    <div class="skill-item">Deep Learning</div>
     <div class="skill-item">SQL & MongoDB</div>
-    <div class="skill-item">EDA & Visualization</div>
-    <div class="skill-item">Power BI & Tableau</div>
+    <div class="skill-item">Tableau / Power BI</div>
+    <div class="skill-item">EDA & Data Cleaning</div>
+    <div class="skill-item">Streamlit</div>
     <div class="skill-item">Web Development</div>
+    <div class="skill-item">NLP</div>
   </div>
 </section>
 
-<!-- Projects Section -->
+<!-- PROJECTS -->
 <section id="projects" class="section">
-  <h2 class="section-title">Latest Projects</h2>
-
+  <h2 class="section-title">Projects</h2>
   <div class="projects-container">
 
     <div class="project-card">
-      <img src="assets/stock.jpg" alt="Stock" />
+      <img src="assets/stock.jpg" alt="">
       <h3>📈 Stock Price Forecasting Web App</h3>
-      <p>Predicts 30-day stock prices using ML & real-time market data.</p>
-      <p><b>Tech:</b> Python, Streamlit, yFinance, Sklearn</p>
+      <p>ML-powered app predicting future stock prices using real-time financial data.</p>
       <div class="project-links">
         <a href="https://stock-forecasting-webapp-z5odae5cyymerm4e895pch.streamlit.app/" target="_blank">Live Demo</a>
-        <a href="https://github.com/Noorahmedks-2103/Stock-Forecasting-WebApp" target="_blank">GitHub ↗</a>
+        <a href="https://github.com/Noorahmedks-2103/Stock-Forecasting-WebApp" target="_blank">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img src="assets/student.jpg" alt="Student" />
-      <h3>🎓 Student Performance Prediction</h3>
-      <p>Regression model predicting student score outcomes.</p>
-      <p><b>Tech:</b> Sklearn, Pandas, Regression, EDA</p>
+      <img src="assets/student.jpg" alt="">
+      <h3>🎓 Student Marks Prediction</h3>
+      <p>Predicts student performance using Regression and EDA visual insights.</p>
       <div class="project-links">
-        <a href="https://github.com/Noorahmedks-2103/Student-Performance-Prediction-ML" target="_blank">GitHub ↗</a>
+        <a href="https://github.com/Noorahmedks-2103/Student-Performance-Prediction-ML" target="_blank">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img src="assets/loan.jpg" alt="Loan" />
+      <img src="assets/loan.jpg" alt="">
       <h3>🏦 Loan Approval Prediction</h3>
-      <p>Classification model for financial loan approval decisions.</p>
-      <p><b>Tech:</b> Random Forest, Logistic Regression</p>
+      <p>Classifies loan status using ML classification models.</p>
       <div class="project-links">
-        <a href="https://github.com/Noorahmedks-2103/Loan-Approval-Prediction" target="_blank">GitHub ↗</a>
+        <a href="https://github.com/Noorahmedks-2103/Loan-Approval-Prediction" target="_blank">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img src="assets/churn.jpg" alt="Customer churn" />
+      <img src="assets/churn.jpg" alt="">
       <h3>📉 Customer Churn Prediction</h3>
-      <p>Predicts churn risk based on behavioral patterns.</p>
-      <p><b>Tech:</b> Sklearn, Pandas, Classification</p>
+      <p>Predicts churn probability based on user behavior and demographics.</p>
       <div class="project-links">
-        <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub ↗</a>
+        <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img src="assets/chatbot.jpg" alt="chatbot" />
+      <img src="assets/chatbot.jpg" alt="">
       <h3>🤖 Student Query Chatbot (NLP)</h3>
-      <p>Rule-based Q/A NLP chatbot for academic queries.</p>
-      <p><b>Tech:</b> Python, Regex, NLP</p>
+      <p>Handles student questions using NLP and rule-based AI.</p>
       <div class="project-links">
-        <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub ↗</a>
+        <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub</a>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- Certifications Section -->
-<section id="certifications" class="section">
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section glass-card">
   <h2 class="section-title">Certifications</h2>
-  <ul class="list">
-    <li>Machine Learning – GeeksforGeeks</li>
-    <li>Data Science with Python – GeeksforGeeks</li>
-    <li>Deploying & Evaluating Gen-AI Apps — MongoDB</li>
-    <li>Tableau Data Analytics — APSCHE</li>
-    <li>Power BI & Excel — ULA</li>
+  <div class="timeline">
+    <div class="timeline-item"><span>AI Engineer</span> – United Latino Association</div>
+    <div class="timeline-item"><span>Gen AI Deployment</span> – MongoDB</div>
+    <div class="timeline-item"><span>Data Science Internship</span> – Agrathas Academy</div>
+    <div class="timeline-item"><span>Power BI, Excel & Tableau</span> – APSCHE</div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="accomplishments" class="section glass-card">
+  <h2 class="section-title">Achievements</h2>
+  <ul>
+    <li>Leadership & Team Management in Business Innovation Program</li>
+    <li>Coding & Robotics Club Contributor</li>
+    <li>Top performer in ML & Data Analytics projects</li>
   </ul>
 </section>
 
-<!-- Accomplishments Section -->
-<section id="accomplishments" class="section">
-  <h2 class="section-title">Accomplishments</h2>
-  <ul class="list">
-    <li>Team Leader – Entrepreneurship Development Program</li>
-    <li>AI/ML Club Member</li>
-    <li>Hackathons & coding events participation</li>
-  </ul>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="section">
+<!-- CONTACT -->
+<section id="contact" class="section glass-card">
   <h2 class="section-title">Contact</h2>
   <div class="contact-grid">
-    <a href="mailto:nkurnipalli34@gmail.com"><i class="fas fa-envelope"></i>Email</a>
-    <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
-    <a href="https://github.com/Noorahmedks-2103" target="_blank"><i class="fab fa-github"></i>GitHub</a>
-    <a href="https://wa.me/917816080954" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-    <a href="https://www.instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+    <a href="mailto:nkurnipalli34@gmail.com"><i class="fa-solid fa-envelope"></i> Gmail</a>
+    <a href="https://wa.me/917816080954" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/Noorahmedks-2103" target="_blank"><i class="fab fa-github"></i> GitHub</a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 Noor Ahmed | All rights reserved</p>
+  <p>© 2025 Noor Ahmed | All Rights Reserved</p>
 </footer>
 
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe class="resume-frame" src="assets/resume.pdf"></iframe>
+  </div>
+</div>
+
+<script src="particles.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
