@@ -20,6 +20,7 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
     <a href="#certifications">Certifications</a>
     <a href="#accomplishments">Achievements</a>
     <a href="#contact">Contact</a>
@@ -29,7 +30,7 @@
   </div>
 </nav>
 
-<!-- DARK / LIGHT TOGGLE + RESUME BUTTON -->
+<!-- DARK / LIGHT TOGGLE + FLOATING RESUME -->
 <button id="darkModeToggle" class="dark-toggle">🌙</button>
 <a class="floating-resume" href="assets/resume.pdf" target="_blank">
   <i class="fa-solid fa-download"></i>
@@ -56,8 +57,8 @@
 <section id="about" class="section glass-card">
   <h2 class="section-title">About Me</h2>
   <p>
-    I am a passionate <b>Machine Learning Engineer</b>, <b>Data Scientist</b>, and <b>AI Developer</b> specializing
-    in predictive modeling, automation, and building real-world data-driven applications.
+    I am a passionate <b>Machine Learning Engineer</b>, <b>Data Scientist</b>, and <b>AI & Automation Enthusiast</b>
+    focused on building end-to-end data solutions — from data cleaning and EDA, to modeling, deployment and reporting.
   </p>
 </section>
 
@@ -67,14 +68,16 @@
   <div class="skills-grid">
     <div class="skill-item">Python</div>
     <div class="skill-item">Machine Learning</div>
-    <div class="skill-item">Data Analysis</div>
-    <div class="skill-item">Deep Learning</div>
+    <div class="skill-item">Data Science</div>
+    <div class="skill-item">Data Analytics</div>
+    <div class="skill-item">Business Analytics</div>
     <div class="skill-item">SQL & MongoDB</div>
-    <div class="skill-item">Tableau / Power BI</div>
+    <div class="skill-item">Pandas / NumPy</div>
     <div class="skill-item">EDA & Data Cleaning</div>
-    <div class="skill-item">Streamlit</div>
+    <div class="skill-item">Power BI & Tableau</div>
+    <div class="skill-item">Streamlit Apps</div>
     <div class="skill-item">Web Development</div>
-    <div class="skill-item">NLP</div>
+    <div class="skill-item">NLP Basics</div>
   </div>
 </section>
 
@@ -86,7 +89,8 @@
     <div class="project-card">
       <img src="assets/stock.jpg" alt="">
       <h3>📈 Stock Price Forecasting Web App</h3>
-      <p>ML-powered app predicting future stock prices using real-time financial data.</p>
+      <p>End-to-end ML app forecasting stock prices using 5-year historical market data.</p>
+      <p><b>Tech:</b> Python, Streamlit, yFinance, Sklearn, Matplotlib</p>
       <div class="project-links">
         <a href="https://stock-forecasting-webapp-z5odae5cyymerm4e895pch.streamlit.app/" target="_blank">Live Demo</a>
         <a href="https://github.com/Noorahmedks-2103/Stock-Forecasting-WebApp" target="_blank">GitHub</a>
@@ -95,8 +99,9 @@
 
     <div class="project-card">
       <img src="assets/student.jpg" alt="">
-      <h3>🎓 Student Marks Prediction</h3>
-      <p>Predicts student performance using Regression and EDA visual insights.</p>
+      <h3>🎓 Student Performance Prediction</h3>
+      <p>Regression model predicting student scores based on study and demographic features.</p>
+      <p><b>Tech:</b> Python, Pandas, Sklearn, EDA</p>
       <div class="project-links">
         <a href="https://github.com/Noorahmedks-2103/Student-Performance-Prediction-ML" target="_blank">GitHub</a>
       </div>
@@ -105,7 +110,8 @@
     <div class="project-card">
       <img src="assets/loan.jpg" alt="">
       <h3>🏦 Loan Approval Prediction</h3>
-      <p>Classifies loan status using ML classification models.</p>
+      <p>Classification system predicting loan approval using applicant financial profile.</p>
+      <p><b>Tech:</b> Logistic Regression, Random Forest, Sklearn</p>
       <div class="project-links">
         <a href="https://github.com/Noorahmedks-2103/Loan-Approval-Prediction" target="_blank">GitHub</a>
       </div>
@@ -114,7 +120,8 @@
     <div class="project-card">
       <img src="assets/churn.jpg" alt="">
       <h3>📉 Customer Churn Prediction</h3>
-      <p>Predicts churn probability based on user behavior and demographics.</p>
+      <p>Predicts churn risk of customers using behavioral and demographic data.</p>
+      <p><b>Tech:</b> Classification, Sklearn, EDA</p>
       <div class="project-links">
         <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub</a>
       </div>
@@ -123,7 +130,8 @@
     <div class="project-card">
       <img src="assets/chatbot.jpg" alt="">
       <h3>🤖 Student Query Chatbot (NLP)</h3>
-      <p>Handles student questions using NLP and rule-based AI.</p>
+      <p>Rule-based Q&A chatbot to handle student academic queries using text processing.</p>
+      <p><b>Tech:</b> Python, Regex, Basic NLP</p>
       <div class="project-links">
         <a href="https://github.com/Noorahmedks-2103" target="_blank">GitHub</a>
       </div>
@@ -132,35 +140,82 @@
   </div>
 </section>
 
+<!-- BLOG -->
+<section id="blog" class="section glass-card">
+  <h2 class="section-title">Blog</h2>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-inner">
+        <div class="blog-front">
+          <h3>Building a Stock Forecasting App</h3>
+          <p>How I used ML & Streamlit to deploy a real project.</p>
+        </div>
+        <div class="blog-back">
+          <p>I explain the full pipeline: data collection, model training, evaluation and deployment to Streamlit Cloud.</p>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-inner">
+        <div class="blog-front">
+          <h3>My Journey into Data Science</h3>
+          <p>From student to building ML projects.</p>
+        </div>
+        <div class="blog-back">
+          <p>Lessons learned, mistakes, and how consistent practice with Python & ML helped me grow skills.</p>
+        </div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-inner">
+        <div class="blog-front">
+          <h3>Practical Machine Learning Roadmap</h3>
+          <p>How I plan, learn and execute ML projects.</p>
+        </div>
+        <div class="blog-back">
+          <p>A step-by-step flow: Python → Data Analysis → ML → Projects → GitHub → Deployment, in simple words.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="section glass-card">
   <h2 class="section-title">Certifications</h2>
   <div class="timeline">
-    <div class="timeline-item"><span>AI Engineer</span> – United Latino Association</div>
-    <div class="timeline-item"><span>Gen AI Deployment</span> – MongoDB</div>
-    <div class="timeline-item"><span>Data Science Internship</span> – Agrathas Academy</div>
-    <div class="timeline-item"><span>Power BI, Excel & Tableau</span> – APSCHE</div>
+    <div class="timeline-item"><span>AI Engineer Certification</span> — United Latino Association</div>
+    <div class="timeline-item"><span>Deploying & Evaluating Gen-AI Apps</span> — MongoDB</div>
+    <div class="timeline-item"><span>Machine Learning</span> — GeeksforGeeks</div>
+    <div class="timeline-item"><span>Data Science with Python</span> — GeeksforGeeks</div>
+    <div class="timeline-item"><span>Data Science Internship</span> — Agrathas Academy</div>
+    <div class="timeline-item"><span>Power BI & Excel Workshops</span> — ULA</div>
+    <div class="timeline-item"><span>Tableau Data Analytics</span> — APSCHE</div>
+    <div class="timeline-item"><span>DSA & Problem Solving</span> — Six Phrase Internship</div>
   </div>
 </section>
 
 <!-- ACHIEVEMENTS -->
 <section id="accomplishments" class="section glass-card">
   <h2 class="section-title">Achievements</h2>
-  <ul>
-    <li>Leadership & Team Management in Business Innovation Program</li>
-    <li>Coding & Robotics Club Contributor</li>
-    <li>Top performer in ML & Data Analytics projects</li>
+  <ul class="achievements-list">
+    <li>Led ML & analytics projects for academics and personal portfolio.</li>
+    <li>Team Leader in Business & Entrepreneurship Program.</li>
+    <li>Active member in AI/ML Club, Coding & Robotics communities.</li>
+    <li>Participated in hackathons, coding contests and technical events.</li>
   </ul>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section glass-card">
   <h2 class="section-title">Contact</h2>
+  <p>Feel free to reach out for opportunities, collaborations or tech discussions.</p>
   <div class="contact-grid">
     <a href="mailto:nkurnipalli34@gmail.com"><i class="fa-solid fa-envelope"></i> Gmail</a>
     <a href="https://wa.me/917816080954" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <a href="https://www.linkedin.com/in/k-s-noor-ahmed-943403319" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     <a href="https://github.com/Noorahmedks-2103" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://www.instagram.com/noorahmedks_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
   </div>
 </section>
 

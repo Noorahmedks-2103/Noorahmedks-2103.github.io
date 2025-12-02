@@ -139,12 +139,7 @@ body {
     #ec4899,
     #22d3ee
   );
-  animation: spinBorder 6s linear infinite;
-}
-
-@keyframes spinBorder {
-  0% { transform: rotate(0deg);}
-  100% { transform: rotate(360deg);}
+  /* No rotation now */
 }
 
 .profile-pic {
@@ -217,7 +212,7 @@ body {
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.85);
   border-radius: 18px;
   border: 1px solid rgba(148, 163, 184, 0.5);
   box-shadow: 0 0 28px rgba(15, 23, 42, 0.9);
@@ -323,6 +318,58 @@ body {
   color: #e5e7eb;
 }
 
+/* =============== BLOG FLIP CARDS =============== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.blog-card {
+  perspective: 1000px;
+}
+
+.blog-inner {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover .blog-inner {
+  transform: rotateY(180deg);
+}
+
+.blog-front,
+.blog-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 14px;
+  backface-visibility: hidden;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(148,163,184,0.7);
+}
+
+.blog-front h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.blog-front p {
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.blog-back {
+  transform: rotateY(180deg);
+  font-size: 13px;
+  color: #e5e7eb;
+  line-height: 1.5;
+}
+
 /* =============== TIMELINE =============== */
 .timeline {
   margin-top: 10px;
@@ -354,17 +401,15 @@ body {
   top: 4px;
 }
 
-/* =============== TESTIMONIALS =============== */
-.testimonial-box {
-  max-width: 700px;
-  margin: 0 auto;
-  border-radius: 18px;
-  padding: 18px 16px;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  font-size: 14px;
+/* =============== ACHIEVEMENTS =============== */
+.achievements-list {
+  list-style: none;
+  margin-top: 6px;
+  text-align: left;
+  display: inline-block;
   color: #e5e7eb;
-  font-style: italic;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 /* =============== CONTACT =============== */
@@ -422,6 +467,18 @@ footer {
   background: #020617;
   border-radius: 14px;
   padding: 10px;
+  animation: modalIn 0.4s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .close {
@@ -440,20 +497,23 @@ footer {
   border-radius: 10px;
 }
 
-/* =============== SCROLL REVEAL =============== */
+/* =============== SCROLL REVEAL (BLUR + SLIDE) =============== */
 .section,
 .project-card,
 .skill-item,
+.blog-card,
 .timeline-item,
-.testimonial-box,
+.achievements-list li,
 .contact-grid a {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(16px);
+  filter: blur(4px);
 }
 
 .reveal {
   opacity: 1 !important;
   transform: translateY(0);
+  filter: blur(0);
   transition: 0.6s ease;
 }
 
@@ -468,19 +528,15 @@ body.light-mode .top-nav {
   border-bottom-color: rgba(148, 163, 184, 0.5);
 }
 
-body.light-mode .section {
-  background: transparent;
-}
-
 body.light-mode .glass-card {
   background: #ffffff;
   border-color: rgba(148, 163, 184, 0.6);
   box-shadow: 0 10px 30px rgba(148, 163, 184, 0.4);
 }
 
-body.light-mode .skill-item,
 body.light-mode .project-card,
-body.light-mode .testimonial-box {
+body.light-mode .blog-front,
+body.light-mode .blog-back {
   background: #ffffff;
   border-color: rgba(148, 163, 184, 0.7);
 }

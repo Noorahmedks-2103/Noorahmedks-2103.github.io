@@ -1,4 +1,4 @@
-// Very simple particle background
+// Simple particle background
 const canvas = document.getElementById("particles");
 if (canvas) {
   const ctx = canvas.getContext("2d");
@@ -25,7 +25,7 @@ if (canvas) {
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = "rgba(148, 163, 184, 0.6)";
+    ctx.fillStyle = "rgba(148, 163, 184, 0.65)";
     particles.forEach((p) => {
       p.x += p.vx;
       p.y += p.vy;

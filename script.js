@@ -76,9 +76,9 @@ if (visitorSpan) {
     });
 }
 
-/* ========== SCROLL REVEAL ========== */
+/* ========== SCROLL REVEAL (BLUR + SLIDE) ========== */
 const revealEls = document.querySelectorAll(
-  ".section, .project-card, .skill-item, .timeline-item, .testimonial-box, .contact-grid a"
+  ".section, .project-card, .skill-item, .blog-card, .timeline-item, .achievements-list li, .contact-grid a"
 );
 
 function revealOnScroll() {
