@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitBot Outputs</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <span>FitBot Outputs</span>
+  <button class="theme-btn" onclick="toggleTheme()">🌗</button>
+</nav>
+
+<div class="page-main">
+  <div class="card">
+    <h3>Output-1: Login</h3>
+    <button onclick="location.href='/login'">View</button>
+  </div>
+
+  <div class="card">
+    <h3>Output-2: Dashboard</h3>
+    <button onclick="location.href='/'">View</button>
+  </div>
+
+  <div class="card">
+    <h3>Final Output: Chatbot</h3>
+    <button onclick="location.href='/chat'">View</button>
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  const t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+  document.body.setAttribute("data-theme",t);
+  localStorage.setItem("fitbot_theme",t);
+}
+document.body.setAttribute("data-theme",localStorage.getItem("fitbot_theme")||"dark");
+</script>
+
+</body>
+</html>

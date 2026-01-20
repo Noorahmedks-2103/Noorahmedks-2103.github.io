@@ -1,0 +1,42 @@
+<script>
+if(!localStorage.getItem("fitbot")) location.href="/login";
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitBot Dashboard</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <span>FitBot</span>
+  <button class="theme-btn" onclick="toggleTheme()">🌗</button>
+</nav>
+
+<div class="page-main">
+  <h1>Dashboard</h1>
+
+  <div class="grid">
+    <div class="card">😴 Sleep</div>
+    <div class="card">💧 Water</div>
+    <div class="card">🏋️ Workout</div>
+    <div class="card">🥗 Diet</div>
+    <div class="card" onclick="location.href='/scanner'">🍔 Food Scan</div>
+  </div>
+
+  <button onclick="location.href='/chat'">Open AI Chat</button>
+</div>
+
+<script>
+function toggleTheme(){
+  const t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+  document.body.setAttribute("data-theme",t);
+  localStorage.setItem("fitbot_theme",t);
+}
+document.body.setAttribute("data-theme",localStorage.getItem("fitbot_theme")||"dark");
+</script>
+
+</body>
+</html>

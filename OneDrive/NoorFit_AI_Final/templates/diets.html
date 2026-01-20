@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>NoorFit AI • Diet Plans</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<div class="page">
+    <h1 class="page-title">Diet Planner</h1>
+
+    <div class="glass-card">
+        <select id="dietGoal">
+            <option value="fatloss">Fat Loss</option>
+            <option value="muscle">Muscle Gain</option>
+            <option value="lowcarb">Low Carb</option>
+        </select>
+
+        <select id="dietType">
+            <option value="veg">Vegetarian</option>
+            <option value="nonveg">Non-Vegetarian</option>
+        </select>
+
+        <select id="dietDays">
+            <option value="7">7 Days</option>
+            <option value="14">14 Days</option>
+            <option value="28">28 Days</option>
+        </select>
+
+        <button class="btn" onclick="generateDiet()">Generate Diet</button>
+    </div>
+
+    <div id="dietResult" class="plan-grid"></div>
+</div>
+
+<script>
+function generateDiet() {
+    const goal = dietGoal.value;
+    const type = dietType.value;
+    const days = dietDays.value;
+
+    fetch("/api/diet/generate", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ goal, type, days })
+    })
+    .then(res => res.json())
+    .then(data => {
+        dietResult.innerHTML = "";
+        data.plan.forEach(day => {
+            const card = document.createElement("div");
+            card.className = "plan-item";
+            card.innerHTML = `
+                <strong>${day.day}</strong>
+                <ul>
+                    <li>Breakfast: ${day.breakfast}</li>
+                    <li>Lunch: ${day.lunch}</li>
+                    <li>Snacks: ${day.snacks}</li>
+                    <li>Dinner: ${day.dinner}</li>
+                </ul>`;
+            dietResult.appendChild(card);
+        });
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>NoorFit AI • Workouts</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<div class="page">
+    <h1 class="page-title">Workout Generator</h1>
+
+    <div class="glass-card">
+        <select id="workoutGoal">
+            <option value="fatloss">Fat Loss</option>
+            <option value="muscle">Muscle Gain</option>
+            <option value="general">General Fitness</option>
+        </select>
+
+        <select id="workoutDays">
+            <option value="7">7 Days</option>
+            <option value="14">14 Days</option>
+            <option value="28">28 Days</option>
+        </select>
+
+        <button class="btn" onclick="generateWorkout()">Generate Workout</button>
+    </div>
+
+    <div id="workoutResult" class="plan-grid"></div>
+</div>
+
+<script>
+function generateWorkout() {
+    const goal = workoutGoal.value;
+    const days = workoutDays.value;
+
+    fetch("/api/workout/generate", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ goal, days })
+    })
+    .then(res => res.json())
+    .then(data => {
+        workoutResult.innerHTML = "";
+        data.plan.forEach(day => {
+            const card = document.createElement("div");
+            card.className = "plan-item";
+            card.innerHTML = `
+                <strong>${day.day}</strong>
+                <ul>
+                    ${day.exercises.map(e => `<li>${e}</li>`).join("")}
+                </ul>`;
+            workoutResult.appendChild(card);
+        });
+    });
+}
+</script>
+
+</body>
+</html>

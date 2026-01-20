@@ -1,0 +1,38 @@
+<script>
+if(!localStorage.getItem("fitbot")) location.href="/login";
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>FitBot Chat</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <span>FitBot</span>
+  <button class="theme-btn" onclick="toggleTheme()">🌗</button>
+</nav>
+
+<div class="page-main">
+  <h1>AI Fitness Coach</h1>
+
+  <div id="chatBox"></div>
+  <input id="chatInput" placeholder="Type here...">
+  <button onclick="send()">Send</button>
+</div>
+
+<script src="/static/js/chat.js"></script>
+
+<script>
+function toggleTheme(){
+  const t=document.body.getAttribute("data-theme")==="light"?"dark":"light";
+  document.body.setAttribute("data-theme",t);
+  localStorage.setItem("fitbot_theme",t);
+}
+document.body.setAttribute("data-theme",localStorage.getItem("fitbot_theme")||"dark");
+</script>
+
+</body>
+</html>
