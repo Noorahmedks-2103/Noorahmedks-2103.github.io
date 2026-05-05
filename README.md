@@ -92,6 +92,3 @@ MIT License — free to modify, use, and distribute.
 
 Feel free to connect — I'm open to collaborations, internships, and job opportunities in:
 Machine Learning • Data Science • AI • Analytics • Software Engineering.
-
-
-ChatGPT can make mi
